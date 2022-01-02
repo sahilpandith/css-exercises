@@ -1,0 +1,11 @@
+.blankWhite , .fancy {
+font-size: 28px;
+}
+
+.blankWhite{
+background-color: black;
+color: white;
+}
+.fancy {
+    background-color: yellow;
+}

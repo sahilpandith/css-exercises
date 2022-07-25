@@ -81,9 +81,11 @@ button.cancel {
   margin-left: 5px;
 }
 .header{
-  flex: 1;
+  
   align-self: center;
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
 }
 .close-button{
   align-self: center;

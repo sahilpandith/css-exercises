@@ -18,10 +18,59 @@ button {
   background: #eee;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.left-links {
+  display: flex;
+  grid-gap: 10px;
+  justify-content: flex-start;
+}
+
+.right-links {
+  display: flex;
+  grid-gap: 10px;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #666;
+}
+
+.content {
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+}
+
 input {
   border: 1px solid #ddd;
   border-radius: 16px;
   padding: 8px 24px;
   width: 400px;
   margin-bottom: 16px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }

@@ -35,6 +35,7 @@
 </body>
 <script>
   function handleResize(event){
+    console.log(event)
     const headerHeight = document.querySelector('.header').getBoundingClientRect().height
     const footerHeight = document.querySelector('.footer').getBoundingClientRect().height
     let ele = document.querySelector(':root');
@@ -43,10 +44,25 @@
     console.log(headerHeight,footerHeight,padding)
     const totalHeight = headerHeight + footerHeight + parseInt(padding) *6
     document.documentElement.style.setProperty(`--extraHeight`, totalHeight + 'px')
+    // const h = getComputedStyle(document.querySelector('.body')).getPropertyValue('height')
+    // document.documentElement.style.setProperty(`--extraHeight`, totalHeight + 'px')
+    
+  }
+
+  const debounce = function(func, wait){
+    let timeout ;
+    return function execFun(...args){
+      const later = () => {
+        clearTimeout(timeout)
+        func(...args)
+      } 
+      clearTimeout(timeout)
+      timeout = setTimeout(later,wait)
+    }
   }
 
   // document.querySelector('.container').style.height = ""
-  window.addEventListener('resize',handleResize)
+  window.addEventListener('resize',debounce(handleResize,500))
 
 </script>
 </html>

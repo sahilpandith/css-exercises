@@ -29,6 +29,10 @@ body {
 
 /* solution */
 
+:root {
+  --extraHeight : 184px;
+  --padding :10px;
+}
 body {
   display: flex;
   flex-direction: column;
@@ -38,7 +42,7 @@ body {
     display: flex;
     font-size: 20px;
     font-weight: 800;
-    padding: 10px;
+    padding:var(--padding);
     letter-spacing: 0.5px;
     height: auto;
 }
@@ -62,13 +66,15 @@ body {
   padding: 32px;
   display: flex;
   flex-wrap: wrap;
+  overflow: auto;
+  height: calc(100vh - var(--extraHeight));
 }
 
 .footer {
   height: auto;
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: var(--padding);
 }
 
 ul {

@@ -33,4 +33,20 @@
     The Odin Project ❤️
   </div>
 </body>
+<script>
+  function handleResize(event){
+    const headerHeight = document.querySelector('.header').getBoundingClientRect().height
+    const footerHeight = document.querySelector('.footer').getBoundingClientRect().height
+    let ele = document.querySelector(':root');
+    let cs = getComputedStyle(ele);
+    let [padding] = cs.getPropertyValue('--padding').split('px')
+    console.log(headerHeight,footerHeight,padding)
+    const totalHeight = headerHeight + footerHeight + parseInt(padding) *6
+    document.documentElement.style.setProperty(`--extraHeight`, totalHeight + 'px')
+  }
+
+  // document.querySelector('.container').style.height = ""
+  window.addEventListener('resize',handleResize)
+
+</script>
 </html>
